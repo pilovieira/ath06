@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/activity_main_drawer_title_functions">
+        <menu>
+            <item
+                android:id="@+id/nav_get_location"
+                android:icon="@drawable/ic_place_black_24dp"
+                android:title="@string/activity_main_drawer_get_localization" />
+            <item
+                android:id="@+id/nav_get_wallet"
+                android:icon="@drawable/ic_account_balance_wallet_black_24dp"
+                android:title="@string/activity_main_drawer_get_wallet" />
+            <item
+                android:id="@+id/nav_get_status"
+                android:icon="@drawable/ic_perm_device_information_black_24dp"
+                android:title="@string/activity_main_drawer_get_status" />
+        </menu>
+    </item>
+
+
+    <item android:title="@string/activity_main_drawer_title_services">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_info"
+                    android:icon="@drawable/ic_content_paste_black_24dp"
+                    android:title="@string/activity_main_drawer_log_history" />
+                <item
+                    android:id="@+id/nav_lock"
+                    android:icon="@drawable/ic_lock_black_24dp"
+                    android:title="@string/activity_main_drawer_lock_module" />
+                <item
+                    android:id="@+id/nav_live"
+                    android:icon="@drawable/ic_near_me_black_24dp"
+                    android:title="@string/activity_main_drawer_live_tracker" />
+                <item
+                    android:id="@+id/nav_virtual_fence"
+                    android:icon="@drawable/ic_wifi_tethering_black_24dp"
+                    android:title="@string/activity_main_drawer_virtual_fence" />
+            </group>
+        </menu>
+    </item>
+
+            <item
+                android:id="@+id/action_settings"
+                android:icon="@drawable/ic_settings_applications_black_24px"
+                android:title="@string/main_menu_settings" />
+
+</menu>
