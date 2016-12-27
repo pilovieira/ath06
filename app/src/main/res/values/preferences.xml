@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- LOCK PREFERENCES -->
-    <string name="PREF_LOCK_IS_LOCKED">lockIsLocked</string>
-    <bool name="PREF_LOCK_IS_LOCKED_DEFAULT">false</bool>
-
     <!-- CLIENT PREFERENCES -->
     <string name="PREF_TRACKER_NUMBER">trackerNumber</string>
 

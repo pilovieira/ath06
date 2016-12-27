@@ -1,4 +1,4 @@
-package br.com.pilovieira.cartracker.client.utils;
+package br.com.pilovieira.ath06.utils;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -7,7 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
-import br.com.pilovieira.cartracker.client.R;
+import br.com.pilovieira.ath06.R;
+
 
 public class NotificationBuilder {
 

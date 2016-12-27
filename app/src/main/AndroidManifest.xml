@@ -25,7 +25,7 @@
         </activity>
 
         <receiver
-            android:name=".comm.ClientSMSReceiver"
+            android:name=".comm.SMSReceiver"
             android:exported="true">
             <intent-filter android:priority="9000">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />

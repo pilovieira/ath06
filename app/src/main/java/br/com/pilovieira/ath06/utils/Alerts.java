@@ -1,10 +1,10 @@
-package br.com.pilovieira.cartracker.client.utils;
+package br.com.pilovieira.ath06.utils;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 
-import br.com.pilovieira.cartracker.client.R;
+import br.com.pilovieira.ath06.R;
 
 public class Alerts {
 	

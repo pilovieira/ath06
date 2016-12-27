@@ -126,5 +126,6 @@
     <string name="clear_virtual_fence">Clear Virtual Fence</string>
     <string name="set_over_speed_alarm">Set Over Speed Alarm</string>
     <string name="tracker_number">Tracker Number</string>
+    <string name="msg_configure_tracker_number">Please configure your tracker number!</string>
 
 </resources>
