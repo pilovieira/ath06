@@ -44,12 +44,12 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="main_menu_settings">Settings</string>
+    <string name="activity_main_drawer_settings">Settings</string>
     <string name="nav_header_description">Main Menu</string>
-    <string name="activity_main_drawer_title_functions">Functions</string>
-    <string name="activity_main_drawer_title_services">Services</string>
-    <string name="activity_main_drawer_get_localization">Get Location</string>
-    <string name="activity_main_drawer_get_wallet">Get Wallet</string>
+    <string name="activity_main_drawer_title_commands">Commands</string>
+    <string name="activity_main_drawer_title_settings">Services</string>
+    <string name="activity_main_drawer_operations">Operations</string>
+    <string name="activity_main_drawer_configurations">Configurations</string>
     <string name="activity_main_drawer_get_status">Get Status</string>
     <string name="activity_main_drawer_lock_module">Lock Module</string>
     <string name="activity_main_drawer_live_tracker">Live Tracker</string>
@@ -101,8 +101,30 @@
     <string name="preference_tracker_number_title">Car Number</string>
     <string name="preference_tracker_number_summary">Number of the car tracker</string>
     <string name="fragment_info_server_log_history">Server Log History</string>
-    <string name="activity_main_drawer_log_history">Log History</string>
+    <string name="activity_main_drawer_user_manual">User Manual</string>
     <string name="fragment_info_location_title">Location</string>
     <string name="fragment_server_log_clear_log_history">Clear Log History</string>
+    <string name="activity_main_drawer_log_info">Log Info</string>
+    <string name="lock_vehicle">Lock Vehicle</string>
+    <string name="unlock_vehicle">Unlock Vehicle</string>
+    <string name="get_location">Get Location</string>
+    <string name="obtain_firmware_version">Obtain Firmware Version</string>
+    <string name="gps_restart">GPS Restart</string>
+    <string name="tracker_restart">Tracker Restart</string>
+    <string name="get_tracker_info">Get Tracker Info</string>
+    <string name="set_tracker_language">Set Tracker Language</string>
+    <string name="configure_apn">Configure APN</string>
+    <string name="perform_factory_reset">Perform Factory Reset</string>
+    <string name="configure_ip">Configure IP</string>
+    <string name="product_registration">Product Registration</string>
+    <string name="pair_number">Pair Number</string>
+    <string name="delete_number">Delete Number</string>
+    <string name="delete_all_paired_numbers">Delete All Paired Numbers</string>
+    <string name="view_paired_numbers">View Paired Numbers</string>
+    <string name="change_password">Change Password</string>
+    <string name="set_virtual_fence">Set Virtual Fence</string>
+    <string name="clear_virtual_fence">Clear Virtual Fence</string>
+    <string name="set_over_speed_alarm">Set Over Speed Alarm</string>
+    <string name="tracker_number">Tracker Number</string>
 
 </resources>
