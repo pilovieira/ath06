@@ -9,6 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import br.com.pilovieira.ath06.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         configureToolbar();
         configureNavigationMenu();
+        configureAdView();
     }
 
     private void configureToolbar() {
@@ -38,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
         final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new DrawerResolver(this));
         loadInitFragment(navigationView.getMenu());
+    }
+
+    private void configureAdView() {
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     private void loadInitFragment(Menu menu) {
