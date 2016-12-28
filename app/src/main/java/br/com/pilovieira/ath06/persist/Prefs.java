@@ -15,7 +15,17 @@ public class Prefs {
 	}
 	
 	public String getTrackerNumber() {
-		return getSharedPreferences().getString(context.getString(R.string.PREF_TRACKER_NUMBER), null);
+		return getSharedPreferences().getString(context.getString(R.string.PREF_TRACKER_NUMBER), "");
+	}
+
+	public void setTrackerNumber(String trackerNumber) {
+		String oldNumber = getTrackerNumber();
+		if (trackerNumber.equals(oldNumber))
+			return;
+
+		SharedPreferences.Editor editor = getSharedPreferences().edit();
+		editor.putString(context.getString(R.string.PREF_TRACKER_NUMBER), trackerNumber);
+		editor.apply();
 	}
 
 	private SharedPreferences getSharedPreferences() {

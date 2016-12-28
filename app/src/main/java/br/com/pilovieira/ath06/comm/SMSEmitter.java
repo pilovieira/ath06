@@ -8,17 +8,10 @@ import br.com.pilovieira.ath06.persist.Prefs;
 
 public class SMSEmitter {
 	
-	private Prefs prefs;
-    private Context context;
+	public static void emit(Context context, String message) {
+        String trackerNumber = new Prefs(context).getTrackerNumber();
 
-    public SMSEmitter(Context context) {
-		this.prefs = new Prefs(context);
-        this.context = context;
-    }
-	
-	public void emit(String message) {
-        String trackerNumber = this.prefs.getTrackerNumber();
-        if (trackerNumber == null)
+        if (trackerNumber.isEmpty())
             throw new RuntimeException(context.getString(R.string.msg_configure_tracker_number));
 
         SmsManager.getDefault().sendTextMessage(trackerNumber, null, message, null, null);

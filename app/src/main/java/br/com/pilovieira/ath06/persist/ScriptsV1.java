@@ -11,18 +11,7 @@ public class ScriptsV1 {
     }
 
     public void upgrade() {
-        sqld.execSQL(createTableLiveTrackerPosition());
         sqld.execSQL(createTableServerLog());
-    }
-
-    private String createTableLiveTrackerPosition() {
-        return
-                "create table live_tracker_position (" +
-                "id integer primary key autoincrement, " +
-                "date integer not null, " +
-                "latitude real not null, " +
-                "longitude real not null, " +
-                "speed real not null);";
     }
 
     private String createTableServerLog() {

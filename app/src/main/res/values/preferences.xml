@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- CLIENT PREFERENCES -->
     <string name="PREF_TRACKER_NUMBER">trackerNumber</string>
 
 </resources>

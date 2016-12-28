@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#218dc9</color>
-    <color name="colorPrimaryDark">#16618b</color>
-    <color name="colorAccent">#55859f</color>
-
-    <color name="button_service_disabled">#d7817d</color>
-    <color name="button_service_enabled">#8fda9c</color>
-
-    <color name="button_module_locked">#f27847</color>
-    <color name="button_module_unlocked">#a3afa5</color>
+    <color name="colorPrimary">#808080</color>
+    <color name="colorPrimaryDark">#3e3e3e</color>
+    <color name="colorAccent">#a6161c</color>
 </resources>

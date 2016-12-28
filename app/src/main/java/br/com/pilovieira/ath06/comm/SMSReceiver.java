@@ -43,7 +43,7 @@ public class SMSReceiver extends BroadcastReceiver {
 
 	private boolean isTrackerMessage(String sender) {
 		String primeNumber = preferences.getTrackerNumber();
-		return sender.contains(primeNumber);
+		return !primeNumber.isEmpty() && sender.contains(primeNumber);
 	}
 
 	private void process(Context context, String message) {
