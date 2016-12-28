@@ -41,5 +41,6 @@
     <string name="msg_configure_tracker_number">Please configure your tracker number!</string>
     <string name="message_command_confirmation">Command \'%1$s\' has sent successfully!</string>
     <string name="log_name_command">Command</string>
+    <string name="user_manual">User Manual</string>
 
 </resources>
