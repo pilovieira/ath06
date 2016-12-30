@@ -39,8 +39,27 @@
     <string name="set_over_speed_alarm">Set Over Speed Alarm</string>
     <string name="tracker_number">Tracker Number</string>
     <string name="msg_configure_tracker_number">Please configure your tracker number!</string>
-    <string name="message_command_confirmation">Command \'%1$s\' has sent successfully!</string>
-    <string name="log_name_command">Command</string>
+    <string name="message_confirmation">Command \'%1$s\' has sent successfully!</string>
+    <string name="message_command_confirmation">Command \'%1$s\' has sent successfully!\n%2$s</string>
+    <string name="command">Command</string>
     <string name="user_manual">User Manual</string>
+    <string name="chinese">Chinese</string>
+    <string name="english">English</string>
+    <string name="change">Change</string>
+    <string name="cancel">Cancel</string>
+    <string name="location">Location</string>
+    <string name="info">Info</string>
+    <string name="number">Number</string>
+    <string name="okay">Okay</string>
+    <string name="ip">IP</string>
+    <string name="port">Port</string>
+    <string name="old_password">Old (6 digit)</string>
+    <string name="new_password">New (6 digit)</string>
+    <string name="over_speed_range"><![CDATA[0 < N < 1000]]></string>
+    <string name="operator">Operator</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="car_station_id">Car Station ID</string>
 
 </resources>

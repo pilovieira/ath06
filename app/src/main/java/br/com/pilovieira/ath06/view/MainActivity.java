@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         configureToolbar();
         configureNavigationMenu();
-        configureAdView();
+        //configureAdView();
     }
 
     private void configureToolbar() {

@@ -8,6 +8,7 @@ import android.telephony.SmsMessage;
 import android.widget.Toast;
 
 import br.com.pilovieira.ath06.R;
+import br.com.pilovieira.ath06.business.MessageIdentifier;
 import br.com.pilovieira.ath06.log.ServerLogManager;
 import br.com.pilovieira.ath06.persist.Prefs;
 import br.com.pilovieira.ath06.utils.NotificationBuilder;
@@ -47,7 +48,8 @@ public class SMSReceiver extends BroadcastReceiver {
 	}
 
 	private void process(Context context, String message) {
-		new ServerLogManager(context).log(context.getString(R.string.fragment_info_info_title), message);
+		String title = new MessageIdentifier(context).identify(message);
+		new ServerLogManager(context).log(title, message);
 
 		NotificationBuilder builder = new NotificationBuilder(context);
 		builder.setId(R.id.nav_info);

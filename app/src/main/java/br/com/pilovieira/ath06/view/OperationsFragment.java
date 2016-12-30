@@ -18,15 +18,14 @@ public class OperationsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_operations, container, false);
-        ListenerProvider provider = new ListenerProvider(view);
 
-        provider.simpleCommandListener(R.id.btn_get_location, commands.getLocation());
-        provider.simpleCommandListener(R.id.btn_lock_vehicle, commands.lockVehicle());
-        provider.simpleCommandListener(R.id.btn_unlock_vehicle, commands.unlockVehicle());
-        provider.simpleCommandListener(R.id.btn_fw_version, commands.firmwareVersion());
-        provider.simpleCommandListener(R.id.btn_tracker_info, commands.trackerInfo());
-        provider.simpleCommandListener(R.id.btn_gps_restart, commands.gpsRestart());
-        provider.simpleCommandListener(R.id.btn_tracker_restart, commands.trackerRestart());
+        ListenerProvider.emitCommandListener(view, R.id.btn_get_location, commands.getLocation());
+        ListenerProvider.emitCommandListener(view, R.id.btn_lock_vehicle, commands.lockVehicle());
+        ListenerProvider.emitCommandListener(view, R.id.btn_unlock_vehicle, commands.unlockVehicle());
+        ListenerProvider.emitCommandListener(view, R.id.btn_fw_version, commands.firmwareVersion());
+        ListenerProvider.emitCommandListener(view, R.id.btn_tracker_info, commands.trackerInfo());
+        ListenerProvider.emitCommandListener(view, R.id.btn_gps_restart, commands.gpsRestart());
+        ListenerProvider.emitCommandListener(view, R.id.btn_tracker_restart, commands.trackerRestart());
 
         return view;
     }
