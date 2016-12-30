@@ -18,7 +18,7 @@ public class SMSEmitter {
 
     public void emit(String commandName, String command) {
         try {
-            //emit(command);
+            emit(command);
 
             log(commandName, command);
         } catch (Exception ex) {

@@ -1,7 +1,12 @@
 package br.com.pilovieira.ath06.view;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -25,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         configureToolbar();
         configureNavigationMenu();
-        //configureAdView();
+        requestSMSPermission();
+        configureAdView();
     }
 
     private void configureToolbar() {
@@ -73,5 +79,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    private void requestSMSPermission() {
+        String permission = android.Manifest.permission.SEND_SMS;
+        if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[]{permission}, 1000);
+        }
     }
 }
