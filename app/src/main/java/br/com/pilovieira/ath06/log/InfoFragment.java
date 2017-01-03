@@ -15,28 +15,32 @@ import br.com.pilovieira.ath06.R;
 
 public class InfoFragment extends Fragment {
 
+    private View view;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_info, container, false);
+        this.view = inflater.inflate(R.layout.fragment_info, container, false);
 
-        mountLogsList(view);
-        mountBtnClear(view);
+        mountLogsList();
+        mountBtnClear();
 
-        return view;
+        return this.view;
     }
 
-    private void mountLogsList(View view) {
-        ListView logList = (ListView) view.findViewById(R.id.fragment_info_message_list);
+    private void mountLogsList() {
+        ListView logList = (ListView) this.view.findViewById(R.id.fragment_info_message_list);
         List<ServerLog> logs = new ServerLogManager(getContext()).getLogs();
         logList.setAdapter(new LogListAdapter(getContext(), logs));
     }
 
-    private void mountBtnClear(View view) {
-        Button btnClear = (Button) view.findViewById(R.id.fragment_server_log_clear);
+    private void mountBtnClear() {
+        Button btnClear = (Button) this.view.findViewById(R.id.fragment_server_log_clear);
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new ServerLogManager(view.getContext()).clearLogs();
+
+                mountLogsList();
             }
         });
     }

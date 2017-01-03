@@ -93,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeHotButtons() {
-        ImageButton button = (ImageButton) findViewById(R.id.btn_hot_get_location);
-
         H06Commands commands = new H06Commands();
         ListenerProvider.emitCommandListener(findViewById(R.id.btn_hot_get_location), getString(R.string.get_location), commands.getLocation());
         ListenerProvider.emitCommandListener(findViewById(R.id.btn_hot_lock_vehicle), getString(R.string.lock_vehicle), commands.lockVehicle());
