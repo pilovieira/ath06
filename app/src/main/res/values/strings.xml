@@ -12,9 +12,9 @@
     <string name="requisition_resolver_info_title">Accurate Tracker H06 Info</string>
     <string name="fragment_info_info_title">Info</string>
     <string name="notification_default_text">Click here for more details</string>
-    <string name="fragment_info_server_log_history">Server Log History</string>
+    <string name="fragment_info_server_log_history">Server Log</string>
     <string name="activity_main_drawer_user_manual">User Manual</string>
-    <string name="fragment_server_log_clear_log">Clear Log</string>
+    <string name="fragment_server_log_clear_log">Clear</string>
     <string name="activity_main_drawer_log_info">Log Info</string>
     <string name="lock_vehicle">Lock Vehicle</string>
     <string name="unlock_vehicle">Unlock Vehicle</string>
