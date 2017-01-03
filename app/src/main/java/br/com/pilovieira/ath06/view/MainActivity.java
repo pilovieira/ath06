@@ -13,11 +13,14 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.ImageButton;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import br.com.pilovieira.ath06.R;
+import br.com.pilovieira.ath06.business.H06Commands;
+import br.com.pilovieira.ath06.business.ListenerProvider;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         configureToolbar();
         configureNavigationMenu();
         requestSMSPermission();
+        initializeHotButtons();
         configureAdView();
     }
 
@@ -86,5 +90,14 @@ public class MainActivity extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, new String[]{permission}, 1000);
         }
+    }
+
+    private void initializeHotButtons() {
+        ImageButton button = (ImageButton) findViewById(R.id.btn_hot_get_location);
+
+        H06Commands commands = new H06Commands();
+        ListenerProvider.emitCommandListener(findViewById(R.id.btn_hot_get_location), getString(R.string.get_location), commands.getLocation());
+        ListenerProvider.emitCommandListener(findViewById(R.id.btn_hot_lock_vehicle), getString(R.string.lock_vehicle), commands.lockVehicle());
+        ListenerProvider.emitCommandListener(findViewById(R.id.btn_hot_unlock_vehicle), getString(R.string.unlock_vehicle), commands.unlockVehicle());
     }
 }

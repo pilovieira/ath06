@@ -18,10 +18,14 @@ public class ListenerProvider {
 
     public static void emitCommandListener(View view, int id, final String command) {
         final Button button = (Button) view.findViewById(id);
-        button.setOnClickListener(new View.OnClickListener() {
+        emitCommandListener(button, button.getText().toString(), command);
+    }
+
+    public static void emitCommandListener(View view, final String text, final String command) {
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new SMSEmitter(view.getContext()).emit(button.getText().toString(), command);
+                new SMSEmitter(view.getContext()).emit(text, command);
             }
         });
     }
