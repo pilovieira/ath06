@@ -7,8 +7,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+<!--    <uses-permission android:name="android.permission.SEND_SMS" />-->
+<!--    <uses-permission android:name="android.permission.RECEIVE_SMS" />-->
 
     <application
         android:allowBackup="true"
@@ -28,19 +28,21 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name=".comm.SMSReceiver"
-            android:exported="true">
-            <intent-filter android:priority="9000">
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
-            </intent-filter>
-        </receiver>
+<!--        <receiver-->
+<!--            android:name=".comm.SMSReceiver"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter android:priority="9000">-->
+<!--                <action android:name="android.provider.Telephony.SMS_RECEIVED" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
 
         <!-- This meta-data tag is required to use Google Play Services. -->
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
         <!-- Include the AdActivity configChanges and theme. -->
-        <activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3459908964898326~6213944517"/>
 
     </application>
 

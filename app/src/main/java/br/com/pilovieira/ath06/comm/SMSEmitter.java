@@ -1,6 +1,8 @@
 package br.com.pilovieira.ath06.comm;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.telephony.SmsManager;
 import android.widget.Toast;
 
@@ -32,15 +34,16 @@ public class SMSEmitter {
         if (trackerNumber.isEmpty())
             throw new RuntimeException(context.getString(R.string.msg_configure_tracker_number));
 
-        SmsManager.getDefault().sendTextMessage(trackerNumber, null, message, null, null);
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setData(Uri.parse("smsto:" + trackerNumber));  // This ensures only SMS apps respond
+        intent.putExtra("sms_body", message);
+        context.startActivity(intent);
 	}
 
     private void log(String commandName, String command) {
         String log = context.getString(R.string.message_command_confirmation, commandName, command);
         new ServerLogManager(context).log(context.getString(R.string.command), log);
-
-        log = context.getString(R.string.message_confirmation, commandName);
-        Toast.makeText(context, log, Toast.LENGTH_SHORT).show();
     }
 
 }

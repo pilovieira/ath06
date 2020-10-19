@@ -1,58 +1,44 @@
 apply plugin: 'com.android.application'
 
-String signPropsName = "signing.properties"
-boolean sign = (project.hasProperty(signPropsName) && new File(project.property(signPropsName)).exists())
-Properties signProps = new Properties()
-
-if (sign) {
-    signProps.load(new FileInputStream(file(project.property(signPropsName))))
-}
-
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
-
+    compileSdkVersion 29
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     defaultConfig {
         applicationId "br.com.pilovieira.ath06"
-        minSdkVersion 9
-        targetSdkVersion 25
+        minSdkVersion 16
+        targetSdkVersion 29
         versionCode 4
         versionName "1.3"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables.useSupportLibrary = true
-    }
-
-    signingConfigs {
-        if (sign) {
-            signConfig {
-                keyAlias signProps['ath06.keyAlias']
-                keyPassword signProps['ath06.keyPassword']
-                storeFile file(signProps['ath06.storeFile'])
-                storePassword signProps['ath06.storePassword']
-            }
-        }
+        multiDexEnabled true
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            if (sign) {
-                signingConfig signingConfigs.signConfig
-            }
+        }
+        debug {
+            applicationIdSuffix ".developer"
         }
     }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.j256.ormlite:ormlite-android:4.45'
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:design:25.1.0'
-    compile 'com.google.android.gms:play-services-ads:9.8.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    testCompile 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+
+    implementation 'com.google.android.gms:play-services-ads:19.5.0'
+
+    implementation 'com.j256.ormlite:ormlite-android:4.45'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
