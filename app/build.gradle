@@ -1,26 +1,25 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    namespace = 'br.com.pilovieira.ath06'
+    compileSdk = 37
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     defaultConfig {
-        applicationId "br.com.pilovieira.ath06"
-        minSdkVersion 16
-        targetSdkVersion 29
-        versionCode 5
-        versionName "2.0"
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        applicationId = "br.com.pilovieira.ath06"
+        minSdk = 23
+        targetSdk = 37
+        versionCode = 6
+        versionName = "3.0"
         vectorDrawables.useSupportLibrary = true
-        multiDexEnabled true
     }
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             applicationIdSuffix ".developer"
@@ -29,16 +28,10 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.8.0'
+    implementation 'com.google.android.material:material:1.14.0'
 
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.gms:play-services-ads:25.4.0'
 
-    implementation 'com.google.android.gms:play-services-ads:19.5.0'
-
-    implementation 'com.j256.ormlite:ormlite-android:4.45'
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.j256.ormlite:ormlite-android:6.1'
 }
